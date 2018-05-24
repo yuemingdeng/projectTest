@@ -5,28 +5,33 @@ package com.first;
  * @ time 2018/5/25 1:44
  */
 public class BinarySearch {
-    public static void main(String[] args) {
-        int[] array = {1, 2, 4, 5, 7, 9, 7, 11, 21};
-        System.out.println(binarySearch(array, 4));
-
-    }
-
-
-    public static int binarySearch(int[] array, int value) {
-        int low = 0;
-        int high = array.length - 1;
-        int mid;
-        while (low <= high) {
-            mid = (low + high) / 2;
-            if (value == array[mid]) {
-                return mid;
-            } else if (value < array[mid]) {
-                high = mid - 1;
-            } else {
-                low = mid + 1;
+    public static int partition(int[] arr,int low,int high){
+            int temp=arr[low];
+            while(low<high){
+                while(arr[high]<=temp&&high>low)
+                    --high;
+                arr[low]=arr[high];
+                while(arr[low]>=temp&&low<high)
+                    ++low;
+                arr[high]=arr[low];
+            }
+            arr[high]=temp;
+            return high;
+        }
+        public static void find_k(int k,int[] arr,int low,int high){
+            int temp=partition(arr,low,high);
+            if(temp==k-1){
+                System.out.print("第"+k+"大的数是："+arr[temp]);
+            }else if(temp>k-1){
+                find_k(k,arr,low,temp-1);
+            }else{
+                find_k(k-temp,arr,temp+1,high);
             }
         }
-        return -1;
 
-    }
+
+        public static void main(String[] args) {
+            int[] arr={3,1,2,5,4,7,6};
+            find_k(2,arr,0,arr.length-1);
+        }
 }
