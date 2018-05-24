@@ -2,6 +2,7 @@ package com.first;
 
 /**
  * @author yuemingdeng
+ * @ time 2018/5/25 1:44
  */
 public class BinarySearch {
     public static void main(String[] args) {
