@@ -8,9 +8,29 @@ import java.util.Vector;
  * @ time 2018/5/25 1:44
  */
 public class BinarySearch {
-    private BinarySearch() {}
-    public static void set(String key, Object value) {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 4, 5, 7, 9, 7, 11, 21};
+        System.out.println(binarySearch(array, 4));
+
     }
-    List<Integer> sub = new Vector<Integer>();
+
+
+    public static int binarySearch(int[] array, int value) {
+        int low = 0;
+        int high = array.length - 1;
+        int mid;
+        while (low <= high) {
+            mid = (low + high) / 2;
+            if (value == array[mid]) {
+                return mid;
+            } else if (value < array[mid]) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return -1;
+
+    }
 
 }
