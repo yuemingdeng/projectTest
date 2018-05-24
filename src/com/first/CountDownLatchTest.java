@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * 工人类
  * @author 骆昊
- *
+ *@readbyYue
  */
 class Worker {
     private String name;        // 名字
