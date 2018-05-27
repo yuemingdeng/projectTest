@@ -31,5 +31,6 @@
       </library>
     </orderEntry>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
