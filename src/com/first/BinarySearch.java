@@ -1,8 +1,5 @@
 package com.first;
 
-import java.util.List;
-import java.util.Vector;
-
 /**
  * @author yuemingdeng
  * @ time 2018/5/25 1:44
@@ -11,6 +8,8 @@ public class BinarySearch {
     public static void main(String[] args) {
         int[] array = {1, 2, 4, 5, 7, 9, 7, 11, 21};
         System.out.println(binarySearch(array, 4));
+
+
 
     }
 
