@@ -28,7 +28,10 @@ public class CatchImage {
     private static final String IMGURL_REG = "<img.*src=(.*?)[^>]*?>";  
     // 获取src路径的正则  
     private static final String IMGSRC_REG = "http:\"?(.*?)(\"|>|\\s+)";  
-  
+
+
+
+
       
     public static void main(String[] args) throws Exception {  
         CatchImage cm = new CatchImage();  
