@@ -2,27 +2,26 @@ package com.first;
 
 /**
  * @author yuemingdeng
- *
- *饿汉式单例
+ * <p>
+ * 饿汉式单例
  */
- class Singleton {
-	Singleton() {}
-	private static Singleton sin = new Singleton();
-	public static Singleton getSingleton () {
-		return sin;
-	}
+
+
+public class Singleton {
+    private Singleton() {
+    }
+
+    private volatile static Singleton instance;
+
+    public static Singleton getInstance() {
+        if (null == instance) {
+            synchronized (Singleton.class) {
+                if (null == instance) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
 
 }
- 
- class Singletonlan{
-	 Singletonlan () {}
-	 private static Singletonlan lan = null;
-	 public static Singletonlan getlan (){
-		 if (lan == null) {
-			 lan = new Singletonlan();
-		 }
-		 
-		 return lan;
-	 }
-	 
- }
