@@ -1,0 +1,30 @@
+package com.first.redisTest;
+
+public class BinarySearch {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 4, 5, 7, 9, 7, 11, 21};
+        BinarySearch binarySearch = new BinarySearch();
+        System.out.println(binarySearch.binarySearch(array, 4));
+
+
+    }
+
+
+    public int binarySearch(int[] array, int value) {
+        int low = 0;
+        int high = array.length - 1;
+        int mid;
+        while (low <= high) {
+            mid = (low + high) >> 2;
+            if (value == array[mid]) {
+                return mid;
+            } else if (value < array[mid]) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return -1;
+
+    }
+}

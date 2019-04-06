@@ -42,6 +42,10 @@ public class Test {
 		return counter;
 		
 	}
+
+	public  void getfine() {
+
+	}
 	
 	
 

@@ -1,13 +1,20 @@
 package com.test.o2;
 
+import java.io.Serializable;
+
 /**
  * @author yuemingdeng
  *
  */
-public class Student implements Comparable<Student> {
-	
+public class Student implements Comparable<Student>, Serializable {
+
+	private static final long serialVersionUID = 8255722907932776673L;
 	private String name;        // 姓名
-    private int age;            // 年龄 
+    private int age;            // 年龄
+	private transient String sex;
+
+
+
     
     public Student() {}
     
@@ -15,9 +22,10 @@ public class Student implements Comparable<Student> {
     	this.name = name;
     }
 
-    public Student(String name, int age) {
+    public Student(String name, int age, String sex) {
         this.name = name;
         this.age = age;
+        this.sex = sex;
     }
     
     /**
@@ -48,7 +56,14 @@ public class Student implements Comparable<Student> {
 		this.age = age;
 	}
 
-	
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
     @Override
     public String toString() {

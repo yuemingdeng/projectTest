@@ -53,4 +53,14 @@ public class Student implements Serializable {
 	public double getGpa() {
 		return this.gpa;
 	}
+
+	@Override
+	public String toString() {
+		return "Student{" +
+				"name='" + name + '\'' +
+				", sex=" + sex +
+				", year=" + year +
+				", gpa=" + gpa +
+				'}';
+	}
 }
